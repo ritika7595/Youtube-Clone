@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyBGoxJi-iojQbCjQwN5kOvU2urtxf9Evg0";
+const API_KEY = "AIzaSyBO222wVhjoZSue_w6fD3qbK8XF-TT-1g0";
 const YOUTUBE_API_URL = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=US&maxResults=12&key=" + API_KEY;
 
 function hideOrShowMenu() {
