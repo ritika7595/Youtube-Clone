@@ -17,37 +17,16 @@
     </style>
 </head>
 <body>
-    <div id="player"></div>
-
+    <iframe height="360"width="640" src="" title="Youtube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
     <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-        function getParameterByName(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
 
-        function onYouTubeIframeAPIReady() {
-            var videoId = getParameterByName('videoId');
-            if (videoId) {
-                var player = new YT.Player('player', {
-                    height: '360',
-                    width: '640',
-                    videoId: videoId,
-                    playerVars: {
-                        autoplay: 1,
-                        controls: 1,
-                        rel: 0,
-                        showinfo: 0,
-                        modestbranding: 1
-                    }
-                });
-            }
-        }
+    <script>
+        var searchParams = new URLSearchParams(window.location.search);
+        var videoId = searchParams.get("videoId");
+        var iframe = document.querySelector("iframe");
+        iframe.src = "https://www.youtube.com/embed/" + videoId;
     </script>
+    
 </body>
 </html>
